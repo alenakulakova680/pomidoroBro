@@ -1,0 +1,19 @@
+/build/
+/.cmake/
+/CMakeUserPresets.json
+
+# Игнорируем локальные настройки VS Code
+/.vscode/
+
+# Игнорируем временные файлы компилятора
+*.obj
+*.exe
+*.a
+*.lib
+*.pdb
+*.ilk
+
+# Игнорируем сгенерированную Doxygen-документацию (препод соберет сам)
+/html/
+/latex/
+/docs/html/
