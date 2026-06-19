@@ -26,7 +26,6 @@ TEST_CASE("3. Testing Session Switching Logic") {
     isWork = TimerLogic::switchSessionLogic(isWork);
     CHECK(isWork == false); 
 
-    // Обратное переключение
     isWork = TimerLogic::switchSessionLogic(isWork);
     CHECK(isWork == true);  
 }
