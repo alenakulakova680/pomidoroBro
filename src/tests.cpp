@@ -29,3 +29,14 @@ TEST_CASE("3. Testing Session Switching Logic") {
     isWork = TimerLogic::switchSessionLogic(isWork);
     CHECK(isWork == true);  
 }
+TEST_CASE("4. Testing Exception") {
+    sf::Font dummyFont;
+    TimerLogic testTimer;
+    CHECK_NOTHROW(testTimer.loadHistory(dummyFont, "non_existent_file_999.txt"));
+
+    auto faultyAction = []() {
+        throw std::runtime_error("assets/font.ttf not found!");
+    };
+
+    CHECK_THROWS_AS(faultyAction(), std::runtime_error);
+}
